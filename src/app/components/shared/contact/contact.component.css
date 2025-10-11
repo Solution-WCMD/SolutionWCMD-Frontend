@@ -1,0 +1,106 @@
+.contact-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.contact-form p {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #ccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.7rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff6b81;
+  box-shadow: 0 0 6px rgba(255, 107, 129, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-form input.ng-touched.ng-invalid,
+.contact-form textarea.ng-touched.ng-invalid {
+  border-color: #ff3c3c;
+  box-shadow: 0 0 6px rgba(255, 60, 60, 0.6);
+}
+
+.contact-form input.ng-touched.ng-valid,
+.contact-form textarea.ng-touched.ng-valid {
+  border-color: #3cff8d;
+  box-shadow: 0 0 6px rgba(60, 255, 141, 0.5);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #ff6b81, #ff3c6a);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 60, 106, 0.4);
+  transition: all 0.3s ease;
+}
+
+.contact-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-form button:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 60, 106, 0.6);
+}
+
+.contract-form-error {
+  margin-top: 1rem;
+  color: #ff4c4c;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

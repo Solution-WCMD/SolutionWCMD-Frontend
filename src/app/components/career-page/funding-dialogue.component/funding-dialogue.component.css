@@ -1,0 +1,223 @@
+/* Backdrop */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 4, 5, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2200;
+  -webkit-font-smoothing: antialiased;
+  animation: backdropFade 180ms ease;
+}
+
+@keyframes backdropFade {
+  from { background: rgba(4,4,5,0.0); }
+  to   { background: rgba(4,4,5,0.72); }
+}
+
+/* Dialog container */
+.dialog {
+  width: min(900px, 96vw);
+  max-height: 90vh;
+  background: linear-gradient(180deg, #121214, #17171a);
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 14px 48px rgba(0,0,0,0.65), 0 2px 8px rgba(0,0,0,0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.04);
+  animation: dialogPop 200ms cubic-bezier(.2,.9,.25,1) both;
+}
+
+@keyframes dialogPop {
+  from { transform: translateY(8px) scale(.995); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Header - sticky so it remains visible while body scrolls */
+.dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, rgba(18,18,20,0.9), rgba(18,18,20,0.7));
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #ff6b81;
+  letter-spacing: 0.4px;
+}
+
+/* Close button */
+.close-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #ddd;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: #fff;
+  background: rgba(255,107,129,0.08);
+  outline: none;
+}
+
+/* Meta note under header */
+.dialog-meta {
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  background: rgba(0,0,0,0.15);
+}
+.dialog-meta .muted {
+  margin: 0;
+  color: #d0cfd1;
+  font-size: 0.95rem;
+}
+
+/* Main scrollable content */
+.dialog-body {
+  padding: 1.25rem 1.25rem;
+  overflow-y: auto;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Headings within the dialog */
+.dialog-body h3 {
+  color: #ff6b81;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+.dialog-body h4 {
+  color: #ffa5b2;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+.dialog-body h5 {
+  color: #cfcfcf;
+  margin-top: 0.6rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+/* Note block */
+.note {
+  margin: 0.6rem 0 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #ff6b81;
+  background: rgba(255,255,255,0.02);
+  color: #e6e3e6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* Lists and paragraphs */
+.dialog-body p { margin: 0.6rem 0; color: #ddd; }
+.dialog-body ul { margin: 0.4rem 0 0.6rem 1.1rem; color: #ddd; }
+.dialog-body ul li { margin: 0.4rem 0; }
+
+/* Table wrapper (horizontal scroll on small screens) */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 0.8rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.01);
+  padding: 0.35rem;
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #e6e3e6;
+}
+
+.table-wrap th,
+.table-wrap td {
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-wrap th {
+  background: rgba(255,255,255,0.02);
+  color: #ff6b81;
+  white-space: nowrap;
+}
+
+/* Highlight total row */
+.table-wrap .total-row td {
+  font-weight: 700;
+  background: rgba(255,255,255,0.02);
+}
+
+/* Disclaimer text */
+.disclaimer {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: #bdb7b8;
+  font-style: italic;
+}
+
+/* Footer with actions (sticky) */
+.dialog-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(0deg, rgba(0,0,0,0.16), rgba(0,0,0,0.08));
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+.btn:focus { outline: 2px solid rgba(255,107,129,0.18); outline-offset: 2px; }
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff6b81, #ff3c6a);
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,60,106,0.12);
+}
+.btn-primary:hover { transform: translateY(-3px); }
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .dialog { width: 96vw; border-radius: 10px; }
+  .dialog-body { padding: 1rem; font-size: 0.96rem; }
+  .dialog-header h2 { font-size: 1rem; }
+  .table-wrap table th, .table-wrap table td { padding: 0.45rem 0.6rem; }
+}

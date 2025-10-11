@@ -1,0 +1,44 @@
+<section class="career-section">
+  <h2 class="title">Join the Team</h2>
+  <p class="intro">
+    We’re building <strong>Solution</strong>, a unique 2D story-driven game where charm meets dread.
+    To make it happen, we’re looking for passionate creators who want to shape something new with us.
+  </p>
+
+  <div class="career-cards">
+    <div class="career-card">
+      <h3>What We’re Looking For</h3>
+      <ul>
+        <li>2D Artists with experience in lineart and character design</li>
+        <li>Unity Developers with clean code and understanding of design patterns</li>
+        <li>Animators with a flair for expressive storytelling</li>
+      </ul>
+    </div>
+
+    <div class="career-card">
+      <h3>Who Can Apply?</h3>
+      <p>
+        Anyone with the right skills, passion for games, and willingness to collaborate.
+        Whether you’re a student, hobbyist, or experienced professional - if you love what you do,
+        you’re welcome here.
+      </p>
+    </div>
+  </div>
+
+  <div class="career-card full-width">
+    <h3>Important Note on Collaboration</h3>
+    <p>
+      This is currently an <strong>unpaid collaboration</strong>. Payment will only be possible if
+      we secure sufficient funding. By joining, you should be aware of the risk:
+      if the game doesn’t succeed, you may not receive payment.
+    </p>
+    <p>
+      Instead, treat this as a <em>learning experience</em>, a way to grow your skills,
+      and a chance to boost your visibility in the indie game dev scene.
+    </p>
+    <button (click)="openFundingDialog()">View Funding Distribution Framework</button>
+  </div>
+
+  <app-application-form></app-application-form>
+  <router-outlet name="dialog"></router-outlet>
+</section>

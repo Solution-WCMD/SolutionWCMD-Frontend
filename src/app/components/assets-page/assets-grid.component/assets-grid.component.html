@@ -1,0 +1,5 @@
+<section class="assets-grid">
+  @for (asset of assetService.assets; track asset.title) {
+    <app-asset-card [asset]="asset"></app-asset-card>
+  }
+</section>

@@ -1,0 +1,38 @@
+<form class="application-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <h3>Apply Now</h3>
+
+  <label>
+    Name
+    <input type="text" [(ngModel)]="formData.name" name="name" required />
+  </label>
+
+  <label>
+    Email
+    <input type="email" [(ngModel)]="formData.email" name="email" required />
+  </label>
+
+  <label>
+    Desired Role
+    <select [(ngModel)]="formData.title" name="role" required>
+      <option value="" disabled selected>Select a role</option>
+      <option value="artist">2D Artist</option>
+      <option value="developer">Unity Developer</option>
+      <option value="animator">Animator</option>
+      <option value="writer">Writer</option>
+      <option value="other">Other</option>
+    </select>
+  </label>
+
+  <label>
+    Why do you want to join?
+    <textarea [(ngModel)]="formData.message" name="message" rows="5" required></textarea>
+  </label>
+
+  <button type="submit" [disabled]="form.invalid">Submit Application</button>
+
+  @if (errorMessage) {
+    <p class="failed-submission">
+      Something went wrong! Please try again later! {{ errorMessage }}
+    </p>
+  }
+</form>

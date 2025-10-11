@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background-color: #1a1a1a;
+  color: #ddd;
+}

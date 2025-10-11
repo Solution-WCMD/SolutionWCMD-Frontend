@@ -1,0 +1,82 @@
+.career-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  color: #fff;
+}
+
+.title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 0 12px rgba(255, 107, 129, 0.7);
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.career-cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 3rem;
+}
+
+.career-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4),
+  0 0 12px rgba(255,107,129,0.4);
+}
+
+.career-card h3 {
+  margin-bottom: 1rem;
+  color: #ff6b81;
+}
+
+.career-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.career-card li {
+  margin-bottom: 0.5rem;
+}
+
+.career-card.full-width {
+  margin-bottom: 3rem;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.career-card.full-width button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(145deg, #ff6b81, #ff3c6a);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-card.full-width button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255,60,106,0.5);
+}

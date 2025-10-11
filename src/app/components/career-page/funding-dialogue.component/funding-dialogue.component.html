@@ -1,0 +1,207 @@
+<!-- backdrop closes the dialog when clicked -->
+<div class="dialog-backdrop" (click)="closeDialog()">
+  <!-- dialog itself - stop propagation so clicking inside doesn't close -->
+  <div
+    class="dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="funding-title"
+    (click)="$event.stopPropagation()"
+    tabindex="0"
+    (keydown.escape)="closeDialog()"
+  >
+    <header class="dialog-header">
+      <h2 id="funding-title">Funding Distribution Framework</h2>
+      <button
+        class="close-btn"
+        type="button"
+        aria-label="Close funding dialog"
+        (click)="closeDialog()"
+      >
+        ×
+      </button>
+    </header>
+
+    <!-- short meta / note under header (sticky header remains visible while body scrolls) -->
+    <div class="dialog-meta">
+      <p class="muted">
+        This document is an <strong>initial conceptual plan</strong> and is <strong>not a legally
+        binding contract</strong>. Terms may change as development and finances evolve.
+      </p>
+    </div>
+
+    <!-- main scrollable content -->
+    <main class="dialog-body">
+      <section>
+        <p>
+          This document outlines the <strong>initial conceptual plan</strong> for how external
+          funding will be distributed within the <em>Solution</em> team. The structure below is a
+          guideline; individual contracts may contain legally binding terms beyond this framework.
+        </p>
+
+        <div class="note">
+          <strong>Note:</strong> This framework does not define post-release profit sharing in full,
+          but the revenue model is expected to follow a similar logic.
+        </div>
+      </section>
+
+      <section>
+        <h3>1. Royalty Allocation (10%)</h3>
+        <p>
+          Ten percent (10%) of total monthly funding is reserved for royalty payouts. That pool is
+          split equally among valid royalty contracts, regardless of individual royalty rates.
+        </p>
+
+        <p>Royalty entitlement is influenced by two factors:</p>
+        <ul>
+          <li>Unpaid Active Development Days (pre-funding)</li>
+          <li>Approved Team Member Investments</li>
+        </ul>
+
+        <h4>1.1 Contribution Credits (“Active Days”)</h4>
+        <p>
+          To reward early unpaid work, qualifying team members receive <strong>$10 per Active Day</strong>.
+        </p>
+
+        <h5>Definition of an Active Day</h5>
+        <ul>
+          <li>A commit to the project repository was made on that calendar day, and</li>
+          <li>At least five days within the surrounding 7-day window (3 days before and 3 days after) also contain commits.</li>
+        </ul>
+
+        <p class="muted">
+          This rule favors sustained development rather than isolated commits. Exceptional contributions
+          may be reviewed by the Team Lead for additional credit.
+        </p>
+
+        <h4>1.2 Investments by Team Members</h4>
+        <p>
+          Team members may make personal contributions (for example, hiring a freelancer or buying an asset) provided:
+        </p>
+        <ul>
+          <li>The investment is pre-approved by the Team Lead (Kirils Turkins)</li>
+          <li>The expense is documented and aligns with project goals</li>
+        </ul>
+        <p>
+          Approved investments are eligible for repayment at a <strong>120% rate</strong> through the royalty pool.
+          <em>Example: a $20 approved investment returns $24.</em>
+        </p>
+      </section>
+
+      <section>
+        <h3>2. Reserve Fund Allocation (30%)</h3>
+        <p>
+          Thirty percent (30%) of monthly funding is directed to the Company Investment Fund (the central reserve),
+          managed by the legal entity holding project finances.
+        </p>
+        <ul>
+          <li><strong>Purpose:</strong> fund development, licenses, infrastructure, and related side-projects</li>
+          <li><strong>Restriction:</strong> Not for personal use of the project owner</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>3. Departmental Budget Allocations (60% total)</h3>
+        <p>
+          The remaining 60% is split across four departments. Department-level percentages below
+          determine each department's monthly budget; internal distribution within departments is
+          handled by contracts and agreements with respective leads.
+        </p>
+
+        <ul>
+          <li><strong>Development Department:</strong> 15%</li>
+          <li><strong>Visual Department:</strong> 20%</li>
+          <li><strong>Audio Department:</strong> 20%</li>
+          <li><strong>Marketing & Community Department:</strong> 5%</li>
+        </ul>
+
+        <h4>3.1 Development (15%)</h4>
+        <p>Funds programming staff, tooling, and third-party services.</p>
+
+        <h4>3.2 Visual (20%)</h4>
+        <p>Funds 2D artists, animators, asset purchases, and contracted visual work.</p>
+
+        <h4>3.3 Audio (20%)</h4>
+        <p>Funds composers, sound designers, voice actors, and possible royalty holdbacks for licensed audio.</p>
+
+        <h4>3.4 Marketing & Community (5%)</h4>
+        <p>
+          Funds advertising, community events, press kits, merchandising samples, and community moderation costs.
+        </p>
+      </section>
+
+      <section>
+        <h3>4. Summary of Monthly Funding Allocation</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+            <tr>
+              <th>Category</th>
+              <th>Percentage</th>
+              <th>Primary Use</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Royalty Allocation</td>
+              <td>10 %</td>
+              <td>Credits to contributors (Active Days & Investments)</td>
+            </tr>
+            <tr>
+              <td>Reserve Fund (Company)</td>
+              <td>30 %</td>
+              <td>Investments, operational overhead</td>
+            </tr>
+            <tr>
+              <td>Development Department</td>
+              <td>15 %</td>
+              <td>Programming, tooling, third-party services</td>
+            </tr>
+            <tr>
+              <td>Visual Department</td>
+              <td>20 %</td>
+              <td>Art salaries, asset purchases, outsourced art</td>
+            </tr>
+            <tr>
+              <td>Audio Department</td>
+              <td>20 %</td>
+              <td>Composers, sound designers, voice actor fees</td>
+            </tr>
+            <tr>
+              <td>Marketing & Community Dept.</td>
+              <td>5 %</td>
+              <td>Advertising, events, promotional assets</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Total</strong></td>
+              <td><strong>100 %</strong></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3>5. Governance & Change Control</h3>
+        <ul>
+          <li><strong>Periodic Review:</strong> Quarterly Funding Council reviews spending vs. budget.</li>
+          <li><strong>Amendments:</strong> Changes require majority vote of all four departments and the Team Lead.</li>
+          <li><strong>Transparency:</strong> Monthly financial reports (receipts, invoices, balances) are shared with active team members.</li>
+        </ul>
+
+        <p class="disclaimer">
+          <strong>Disclaimer:</strong> This framework is a guideline. Individual contracts may contain legally binding
+          terms beyond the scope of this document. Refer to signed contracts for obligations.
+        </p>
+      </section>
+    </main>
+
+    <footer class="dialog-footer">
+      <div class="footer-actions">
+        <button class="btn btn-primary" (click)="closeDialog()">Close</button>
+      </div>
+    </footer>
+  </div>
+</div>

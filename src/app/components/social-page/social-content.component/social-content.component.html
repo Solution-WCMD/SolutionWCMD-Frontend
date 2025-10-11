@@ -1,0 +1,22 @@
+<section class="social-section">
+  <h2 class="social-title">Connect With Us</h2>
+  <p class="social-description">
+    Follow and support Solution across our channels!
+  </p>
+
+  <div class="social-grid">
+    @for (social of socials; track social.url) {
+      <a
+        class="social-card"
+        [href]="social.url"
+        target="_blank"
+        rel="noopener"
+        [ngStyle]="{'--hover-color': social.color}"
+      >
+        <i [class]="social.icon + ' social-icon'"></i>
+        <h3>{{ social.name }}</h3>
+        <p>{{ social.description }}</p>
+      </a>
+    }
+  </div>
+</section>

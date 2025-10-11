@@ -1,0 +1,99 @@
+.asset-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  margin: 0.5rem;
+
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  cursor: pointer;
+  transform-origin: center center;
+  transition:
+    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  will-change: transform, box-shadow;
+}
+
+.asset-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center,
+  rgba(255, 107, 129, 0.25) 0%,
+  transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.asset-card:hover::before {
+  opacity: 1;
+}
+
+.asset-card:hover {
+  transform: scale(1.04) rotateZ(3deg) translateY(-4px);
+  border-color: rgba(255, 107, 129, 0.4);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.1));
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.45),
+    0 0 15px rgba(255, 60, 106, 0.4);
+}
+
+.asset-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.35s ease;
+  z-index: 1;
+}
+
+.asset-card:hover .asset-image {
+  transform: scale(1.05);
+}
+
+.asset-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.6rem 0 0 0;
+  color: #fff;
+  letter-spacing: 0.5px;
+  z-index: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.asset-card:hover .asset-title {
+  color: #ff6b81;
+  text-shadow: 0 0 8px rgba(255, 107, 129, 0.6);
+}
+
+@media (max-width: 767px) {
+  .asset-card {
+    max-width: 90%;
+    margin: 0 auto;
+    transform: none !important;
+  }
+
+  .asset-card:hover {
+    transform: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .asset-card:hover .asset-image {
+    transform: none;
+  }
+}
