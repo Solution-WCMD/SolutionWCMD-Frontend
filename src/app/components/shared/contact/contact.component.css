@@ -1,106 +1,123 @@
-.contact-form {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  font-family: "Segoe UI", sans-serif;
-  color: #fff;
-  animation: fadeIn 0.6s ease-out;
-}
-
-.contact-form p {
-  margin: 1rem 0;
+/* ===== Contact Section ===== */
+.contact-section {
+  min-height: 100vh;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at top, #080016, #000);
+  color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
 }
 
+.contact-title {
+  font-size: 2.2rem;
+  color: #a855f7;
+  text-shadow: 0 0 10px #a855f7;
+  margin-bottom: 0.3rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* ===== Contact Form ===== */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(20, 20, 40, 0.85);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+}
+
+.contact-form:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5),
+              inset 0 0 10px rgba(138, 43, 226, 0.4);
+}
+
+/* ===== Labels & Inputs ===== */
 .contact-form label {
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  color: #ccc;
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: #b8b8ff;
+  text-shadow: 0 0 6px #8b5cf6;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  padding: 0.7rem;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 8px;
+  padding: 0.8rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   outline: none;
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #ff6b81;
-  box-shadow: 0 0 6px rgba(255, 107, 129, 0.6);
-  background: rgba(255, 255, 255, 0.1);
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
 }
 
-.contact-form input.ng-touched.ng-invalid,
-.contact-form textarea.ng-touched.ng-invalid {
-  border-color: #ff3c3c;
-  box-shadow: 0 0 6px rgba(255, 60, 60, 0.6);
-}
-
-.contact-form input.ng-touched.ng-valid,
-.contact-form textarea.ng-touched.ng-valid {
-  border-color: #3cff8d;
-  box-shadow: 0 0 6px rgba(60, 255, 141, 0.5);
-}
-
-.contact-form textarea {
-  resize: vertical;
-}
-
+/* ===== Button ===== */
 .contact-form button {
+  width: 100%;
+  background: linear-gradient(90deg, #a855f7, #00ffff);
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  background: linear-gradient(135deg, #ff6b81, #ff3c6a);
-  border: none;
-  border-radius: 6px;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 1rem;
-  box-shadow: 0 4px 15px rgba(255, 60, 106, 0.4);
-  transition: all 0.3s ease;
+  gap: 0.5rem;
 }
 
-.contact-form button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00ffff;
 }
 
-.contact-form button:hover:not(:disabled) {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(255, 60, 106, 0.6);
-}
-
-.contract-form-error {
-  margin-top: 1rem;
-  color: #ff4c4c;
-  font-size: 0.9rem;
+/* ===== Messages ===== */
+.contact-form-error {
+  color: #ff6b6b;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 0.6rem;
+  border-radius: 8px;
   text-align: center;
-  animation: shake 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-4px); }
-  40%, 80% { transform: translateX(4px); }
+.contact-form-submitted {
+  color: #00ffcc;
+  background: rgba(0, 255, 204, 0.1);
+  padding: 0.6rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+  }
+  .contact-title {
+    font-size: 1.8rem;
+  }
 }

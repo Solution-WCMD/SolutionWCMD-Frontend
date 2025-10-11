@@ -1,33 +1,17 @@
 import { Component } from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {NgOptimizedImage} from '@angular/common';
+import { LucideAngularModule, Youtube, Github, Heart, MessageCircle } from 'lucide-angular';
 
 @Component({
   selector: 'app-info-footer',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [LucideAngularModule],
   templateUrl: './info-footer.component.html',
-  styleUrl: './info-footer.component.css',
-  standalone: true
+  styleUrls: ['./info-footer.component.css']
 })
 export class InfoFooterComponent {
+  icons = { Youtube, Github, Heart, MessageCircle };
 
-  scrollToTop(): void {
-    const start = window.scrollY;
-    const duration = 500;
-    const startTime = performance.now();
-
-    const animateScroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-
-      window.scrollTo(0, start * (1 - ease));
-
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
-
-    requestAnimationFrame(animateScroll);
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
