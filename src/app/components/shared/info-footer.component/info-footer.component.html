@@ -1,35 +1,43 @@
-<div class="footer-content">
-  <div class="footer-about">
-    <h3>Solution</h3>
-    <p>
-      Where charm meets dread. Solution is a 2D story-driven horror game filled with puzzles, tense encounters,
-      and a haunting narrative told across three acts.
-    </p>
+<footer class="neon-footer">
+  <div class="footer-inner">
+    <div class="footer-col about">
+      <h2 class="glow-text">Solution</h2>
+      <p>
+        Where charm meets dread — a 2D story-driven horror game filled with puzzles,
+        tension, and haunting emotions that pull you into the unknown.
+      </p>
+    </div>
+
+    <div class="footer-col links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/social">Social</a></li>
+        <li><a routerLink="/assets">Unity Assets</a></li>
+        <li><a routerLink="/career">Career</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://youtube.com/@SolutionOfficialChannel" target="_blank">
+          <lucide-icon [img]="icons.Youtube" size="24"></lucide-icon>
+        </a>
+        <a href="https://discord.com/56p8gDYn9n" target="_blank">
+          <lucide-icon [img]="icons.MessageCircle" size="24"></lucide-icon>
+        </a>
+        <a href="https://patreon.com/SolutionGame" target="_blank">
+          <lucide-icon [img]="icons.Heart" size="24"></lucide-icon>
+        </a>
+        <a href="https://github.com/MrMystery10-del" target="_blank">
+          <lucide-icon [img]="icons.Github" size="24"></lucide-icon>
+        </a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-links">
-    <h4>Quick Links</h4>
-    <ul>
-      <li><a routerLink="">Home</a></li>
-      <li><a routerLink="/social">Social</a></li>
-      <li><a routerLink="/assets">Unity Assets</a></li>
-      <li><a routerLink="/career">Career</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-social">
-    <h4>Follow Us</h4>
-    <ul>
-      <li><a href="https://youtube.com/@SolutionOfficialChannel" target="_blank" rel="noopener">YouTube</a></li>
-      <li><a href="https://discord.com/56p8gDYn9n" target="_blank" rel="noopener">Discord</a></li>
-      <li><a href="https://patreon.com/SolutionGame" target="_blank" rel="noopener">Patreon</a></li>
-      <li><a href="https://github.com/MrMystery10-del" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="footer-bottom">
-  <p>2025 Solution - Where Charm Meets Dread. All rights reserved.</p>
-  <a routerLink="/privacy" class="privacy">Privacy Policy</a>
-  <a (click)="scrollToTop()" class="back-to-top">Back to top ↑</a>
-</div>
+  <div class="footer-bottom">
+    <p>© 2025 <span class="glow-text">Solution</span> — Where Charm Meets Dread</p>
+    <div class="bottom-links">
+      <a routerLink="/privacy">Privacy Policy</a>

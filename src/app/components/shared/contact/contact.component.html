@@ -1,79 +1,85 @@
-<form class="contact-form" #contact="ngForm" (ngSubmit)="onSubmit(contact)">
-  <p>
-    <label for="email">Your email</label>
-    <input
-      name="email"
-      id="email"
-      type="email"
-      placeholder="you@example.com"
-      required
-      ngModel
-      email
-      #emailField="ngModel"
-    />
-  </p>
-  <p>
-    <label for="reason">Reason for contact</label>
-    <input
-      name="reason"
-      id="reason"
-      type="text"
-      placeholder="Collaboration, feedback..."
-      minlength="6"
-      maxlength="120"
-      required
-      ngModel
-      #reasonField="ngModel"
-    />
-  </p>
-  <p>
-    <label for="message">Your message</label>
-    <textarea
-      name="message"
-      id="message"
-      rows="7"
-      placeholder="Type your message here!"
-      minlength="32"
-      maxlength="3000"
-      required
-      ngModel
-      #messageField="ngModel"
-    >
+<section class="contact-section">
+  <h2 class="contact-title">Get in Touch</h2>
+  <p class="contact-subtitle">We’d love to hear from you 👋</p>
 
-    </textarea>
-  </p>
-  <button type="submit">
-    <span>Submit</span>
-    <span>🚀</span>
-  </button>
-
-  @if (emailField.touched && emailField.dirty && contact.form.invalid) {
-    <p class="contract-form-error">
-      Email field is invalid. Please check your input.
+  <form class="contact-form" #contact="ngForm" (ngSubmit)="onSubmit(contact)">
+    <p>
+      <label for="email">Your email</label>
+      <input
+        name="email"
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        required
+        ngModel
+        email
+        #emailField="ngModel"
+      />
     </p>
-  }
 
-  @if (reasonField.touched && reasonField.dirty && contact.form.invalid) {
-    <p class="contract-form-error">
-      Reason field is invalid. Please check your input.
+    <p>
+      <label for="reason">Reason for contact</label>
+      <input
+        name="reason"
+        id="reason"
+        type="text"
+        placeholder="Collaboration, feedback..."
+        minlength="6"
+        maxlength="120"
+        required
+        ngModel
+        #reasonField="ngModel"
+      />
     </p>
-  }
 
-  @if (messageField.touched && messageField.dirty && contact.form.invalid) {
-    <p class="contract-form-error">
-      Message field is invalid. Please check your input.
+    <p>
+      <label for="message">Your message</label>
+      <textarea
+        name="message"
+        id="message"
+        rows="7"
+        placeholder="Type your message here!"
+        minlength="32"
+        maxlength="3000"
+        required
+        ngModel
+        #messageField="ngModel"
+      ></textarea>
     </p>
-  }
 
-  @if (submitted) {
-    <p class="contract-form-submitted">
-      Form submitted successfully!
-    </p>
-  }
+    <button type="submit">
+      <span>Send Message</span>
+      <span>🚀</span>
+    </button>
 
-  @if (errorMessage) {
-    <p class="contract-form-error">
-      Could not submit the form. Please try again later! {{ errorMessage }}
-    </p>
-  }
-</form>
+    @if (emailField.touched && emailField.dirty && contact.form.invalid) {
+      <p class="contact-form-error">
+        Email field is invalid. Please check your input.
+      </p>
+    }
+
+    @if (reasonField.touched && reasonField.dirty && contact.form.invalid) {
+      <p class="contact-form-error">
+        Reason field is invalid. Please check your input.
+      </p>
+    }
+
+    @if (messageField.touched && messageField.dirty && contact.form.invalid) {
+      <p class="contact-form-error">
+        Message field is invalid. Please check your input.
+      </p>
+    }
+
+    @if (submitted) {
+      <p class="contact-form-submitted">
+        ✅ Form submitted successfully!
+      </p>
+    }
+
+    @if (errorMessage) {
+      <p class="contact-form-error">
+        ❌ Could not submit the form. Please try again later! {{ errorMessage }}
+      </p>
+    }
+  </form>
+</section>
