@@ -79,3 +79,23 @@
     transform: translateY(0);
   }
 }
+.open-source-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd; 
+  background: none; 
+  border: none;
+  padding: 0;
+}
+
+.open-source-note a {
+  color: #ff6b81; 
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(255, 107, 129, 0.4);
+}
+
+.open-source-note a:hover {
+  text-decoration: underline;
+}
