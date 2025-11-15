@@ -4,14 +4,14 @@
 
     @if (latestVideos.length > 0) {
       <div class="yt-grid">
-        @for (video of latestVideos; track video.id.videoId) {
-          <a class="yt-card" [href]="videoUrl(video)" target="_blank">
+        @for (video of latestVideos; track video.title) {
+          <a class="yt-card" [href]="video.link.href" target="_blank">
             <img
               class="yt-thumb"
-              [src]="video.snippet.thumbnails.medium.url"
+              [src]="thumbnailUrl(video.link.href)"
               alt="YouTube Video"
             />
-            <h3>{{ video.snippet.title }}</h3>
+            <h3>{{ video.title }}</h3>
           </a>
         }
       </div>
@@ -25,14 +25,14 @@
 
     @if (latestShorts.length > 0) {
       <div class="yt-grid">
-        @for (short of latestShorts; track short.id.videoId) {
-          <a class="yt-card" [href]="videoUrl(short)" target="_blank">
+        @for (short of latestShorts; track short.title) {
+          <a class="yt-card" [href]="short.link.href" target="_blank">
             <img
               class="yt-thumb"
-              [src]="short.snippet.thumbnails.medium.url"
+              [src]="thumbnailUrl(short.link.href)"
               alt="YouTube Short"
             />
-            <h3>{{ short.snippet.title }}</h3>
+            <h3>{{ short.title }}</h3>
           </a>
         }
       </div>

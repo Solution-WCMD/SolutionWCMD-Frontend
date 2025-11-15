@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { YouTubeSearchItem } from './youtube.types';
-import { YouTubeService } from '../../../services/youtube.service';
+import { YouTubeService, YouTubeVideo } from '../../../services/youtube.service';
 
 @Component({
   selector: 'app-social-content',
@@ -12,8 +11,8 @@ import { YouTubeService } from '../../../services/youtube.service';
 })
 export class SocialContentComponent {
 
-  latestVideos: YouTubeSearchItem[] = [];
-  latestShorts: YouTubeSearchItem[] = []
+  latestVideos: YouTubeVideo[] = [];
+  latestShorts: YouTubeVideo[] = []
 
   constructor(private youTube: YouTubeService) {}
 
@@ -22,8 +21,11 @@ export class SocialContentComponent {
     this.latestShorts = await this.youTube.getLatestShorts();
   }
 
-  videoUrl(item: any) {
-    return 'https://www.youtube.com/watch?v=' + item.id.videoId;
+  thumbnailUrl(href: string): string {
+    const match = href.match(/(?:v=|\/shorts\/)([\w-]+)/);
+    const videoId = match ? match[1] : '';
+
+    return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
   }
 
   socials = [
