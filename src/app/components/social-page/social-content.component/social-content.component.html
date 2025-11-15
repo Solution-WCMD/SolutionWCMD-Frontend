@@ -1,4 +1,46 @@
 <section class="social-section">
+  <section class="yt-section">
+    <h2 class="yt-title">Latest Videos</h2>
+
+    @if (latestVideos.length > 0) {
+      <div class="yt-grid">
+        @for (video of latestVideos; track video.id.videoId) {
+          <a class="yt-card" [href]="videoUrl(video)" target="_blank">
+            <img
+              class="yt-thumb"
+              [src]="video.snippet.thumbnails.medium.url"
+              alt="YouTube Video"
+            />
+            <h3>{{ video.snippet.title }}</h3>
+          </a>
+        }
+      </div>
+    } @else {
+      <p class="fallback-message">No videos available yet. Check back soon.</p>
+    }
+  </section>
+
+  <section class="yt-section">
+    <h2 class="yt-title">Latest Shorts</h2>
+
+    @if (latestShorts.length > 0) {
+      <div class="yt-grid">
+        @for (short of latestShorts; track short.id.videoId) {
+          <a class="yt-card" [href]="videoUrl(short)" target="_blank">
+            <img
+              class="yt-thumb"
+              [src]="short.snippet.thumbnails.medium.url"
+              alt="YouTube Short"
+            />
+            <h3>{{ short.snippet.title }}</h3>
+          </a>
+        }
+      </div>
+    } @else {
+      <p class="fallback-message">No shorts available yet. Stay tuned.</p>
+    }
+  </section>
+  
   <h2 class="social-title">Connect With Us</h2>
   <p class="social-description">
     Follow and support Solution across our channels!

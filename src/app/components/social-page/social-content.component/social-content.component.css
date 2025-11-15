@@ -4,6 +4,53 @@
   max-width: 1200px;
 }
 
+.yt-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.yt-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255,107,129,0.6);
+}
+
+.yt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.yt-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.yt-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.yt-thumb {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.fallback-message {
+  text-align: center;
+  color: #ccc;
+  font-size: 1rem;
+  margin: 1.2rem 0 2rem 0;
+  opacity: 0.7;
+}
+
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
