@@ -1,0 +1,30 @@
+name: Docker Image CI for GHCR
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version
+        run: ./scripts/extract-version.sh
+
+      - name: Login to GHCR
+        env:
+          GHCR_USERNAME: KirilsTurkins
+          GHCR_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: ./scripts/ghcr-login.sh
+
+      - name: Build and push
+        env:
+          IMAGE_NAME: ghcr.io/solution-wcmd/frontend
+        run: ./scripts/build-and-push.sh
