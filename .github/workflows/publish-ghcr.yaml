@@ -12,8 +12,12 @@ permissions:
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
+    environment: Deploy
     steps:
       - uses: actions/checkout@v4
+
+      - name: Make scripts executable
+        run: chmod +x ./scripts/*.sh
 
       - name: Extract version
         run: ./scripts/extract-version.sh
