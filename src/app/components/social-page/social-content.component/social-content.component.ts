@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { YouTubeService, YouTubeVideo } from '../../../services/youtube.service';
 
 @Component({
   selector: 'app-social-content',
@@ -10,23 +9,6 @@ import { YouTubeService, YouTubeVideo } from '../../../services/youtube.service'
   styleUrl: './social-content.component.css'
 })
 export class SocialContentComponent {
-
-  latestVideos: YouTubeVideo[] = [];
-  latestShorts: YouTubeVideo[] = []
-
-  constructor(private youTube: YouTubeService) {}
-
-  async ngOnInit() {
-    this.latestVideos = await this.youTube.getLatestVideos();
-    this.latestShorts = await this.youTube.getLatestShorts();
-  }
-
-  thumbnailUrl(href: string): string {
-    const match = href.match(/(?:v=|\/shorts\/)([\w-]+)/);
-    const videoId = match ? match[1] : '';
-
-    return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
-  }
 
   socials = [
     {
@@ -44,13 +26,6 @@ export class SocialContentComponent {
       description: 'Join the community and chat with us!'
     },
     {
-      name: 'Patreon',
-      url: 'https://patreon.com/SolutionGame',
-      icon: 'fa-brands fa-patreon',
-      color: '#F96854',
-      description: 'Support development and get exclusive perks!'
-    },
-    {
       name: 'Steam',
       url: 'https://store.steampowered.com/app/soon',
       icon: 'fa-brands fa-steam',
@@ -59,14 +34,14 @@ export class SocialContentComponent {
     },
     {
       name: 'Unity Asset Store',
-      url: 'https://assetstore.unity.com/publishers/soon',
+      url: 'https://assetstore.unity.com/packages/2d/environments/2d-reflections-mirror-puddle-334898',
       icon: 'fa-solid fa-cubes',
       color: '#333333',
       description: 'Check out our Unity assets and tools.'
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/MrMystery10-del',
+      url: 'https://github.com/Solution-WCMD',
       icon: 'fa-brands fa-github',
       color: '#181717',
       description: 'Explore open-source tools and contributions.'

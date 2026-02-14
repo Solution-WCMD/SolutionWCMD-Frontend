@@ -1,45 +1,71 @@
 <section class="social-section">
-  <section class="yt-section">
-    <h2 class="yt-title">Latest Videos</h2>
+    <section class="yt-section">
+        <h2 class="yt-title">Latest Videos</h2>
 
-    @if (latestVideos.length > 0) {
-      <div class="yt-grid">
-        @for (video of latestVideos; track video.title) {
-          <a class="yt-card" [href]="video.link.href" target="_blank">
-            <img
-              class="yt-thumb"
-              [src]="thumbnailUrl(video.link.href)"
-              alt="YouTube Video"
-            />
-            <h3>{{ video.title }}</h3>
-          </a>
-        }
-      </div>
-    } @else {
-      <p class="fallback-message">No videos available yet. Check back soon.</p>
-    }
-  </section>
+        <div class="yt-grid">
+            <div class="yt-card">
+                <div class="yt-embed">
+                    <iframe
+                            src="https://www.youtube.com/embed/CRjtNentCRQ"
+                            title="Solution | Story-Driven Horror Game (Teaser)"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Solution | Story-Driven Horror Game (Teaser)</h3>
+            </div>
 
-  <section class="yt-section">
-    <h2 class="yt-title">Latest Shorts</h2>
+            <div class="yt-card">
+                <div class="yt-embed">
+                    <iframe
+                            src="https://www.youtube.com/embed/iOfdJ_ZarOA"
+                            title="Solution - Official Theme Track"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Solution - Official Theme Track</h3>
+            </div>
+        </div>
+    </section>
 
-    @if (latestShorts.length > 0) {
-      <div class="yt-grid">
-        @for (short of latestShorts; track short.title) {
-          <a class="yt-card" [href]="short.link.href" target="_blank">
-            <img
-              class="yt-thumb"
-              [src]="thumbnailUrl(short.link.href)"
-              alt="YouTube Short"
-            />
-            <h3>{{ short.title }}</h3>
-          </a>
-        }
-      </div>
-    } @else {
-      <p class="fallback-message">No shorts available yet. Stay tuned.</p>
-    }
-  </section>
+    <section class="yt-section">
+        <h2 class="yt-title">Latest Shorts</h2>
+
+        <div class="yt-grid">
+            <div class="yt-card">
+                <div class="yt-embed short">
+                    <iframe
+                            src="https://www.youtube.com/embed/pH0HGQ6JzkQ"
+                            title="Real-Time 2D Reflections in Unity | Mirrors & Puddles (URP)"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Real-Time 2D Reflections in Unity | Mirrors & Puddles (URP)</h3>
+            </div>
+
+            <div class="yt-card">
+                <div class="yt-embed short">
+                    <iframe
+                            src="https://www.youtube.com/embed/80xxDcZO3Z4"
+                            title="They say that we malfunctioned"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>They say that we malfunctioned</h3>
+            </div>
+        </div>
+    </section>
   
   <h2 class="social-title">Connect With Us</h2>
   <p class="social-description">

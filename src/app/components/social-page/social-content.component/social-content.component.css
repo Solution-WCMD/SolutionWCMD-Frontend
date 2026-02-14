@@ -4,6 +4,30 @@
   max-width: 1200px;
 }
 
+.yt-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.yt-embed.short {
+    padding-bottom: 177.77%; /* 9:16 vertical */
+}
+
+.yt-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+}
+
 .yt-section {
   margin-top: 4rem;
   text-align: center;
